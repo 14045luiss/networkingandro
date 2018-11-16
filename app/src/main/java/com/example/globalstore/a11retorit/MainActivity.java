@@ -1,10 +1,13 @@
 package com.example.globalstore.a11retorit;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
@@ -26,6 +29,28 @@ public class MainActivity extends AppCompatActivity {
     private RecyclerView mRecyclerView;
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
+    private MenuItem item;
+
+    public boolean onCreateOptionsMenu( Menu menu) {
+        getMenuInflater (). inflate ( R . menu . menu_layout , menu );
+        return super . onCreateOptionsMenu (menu );
+    }
+
+    public boolean onOptionsItemSelected ( MenuItem item ) {
+        Intent mIntent ;
+        switch ( item . getItemId ()) {
+            case R . id . menuTambahTransPembelian :
+                mIntent = new Intent ( this , LayarDetail . class );
+                startActivity ( mIntent );
+                return true ;
+            case R . id . menuListPembeli :
+                mIntent = new Intent ( this , LayarListPembeli . class );
+                startActivity ( mIntent );
+                return true ;
+            default :
+                return super . onOptionsItemSelected ( item );
+        }
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,5 +83,7 @@ public class MainActivity extends AppCompatActivity {
                     }
                 });
             }
+
         });
+
 }}
