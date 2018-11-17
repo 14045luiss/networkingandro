@@ -1,6 +1,7 @@
 package com.example.globalstore.a11retorit;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -27,7 +28,7 @@ public class LayarListPembeli extends AppCompatActivity {
     RecyclerView.LayoutManager mLayoutManager ;
     Context mContext ;
     ApiInterface mApiInterface ;
-    Button btGet ;
+    Button btAddData ,btGet ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super . onCreate ( savedInstanceState );
@@ -36,6 +37,7 @@ public class LayarListPembeli extends AppCompatActivity {
         mRecyclerView = ( RecyclerView ) findViewById ( R . id . recyclerView );
         mLayoutManager = new LinearLayoutManager ( mContext );
         mRecyclerView . setLayoutManager ( mLayoutManager );
+        btAddData = findViewById(R.id.btAddData);
         btGet = ( Button ) findViewById ( R . id . btGet );
         btGet . setOnClickListener ( new View . OnClickListener () {
             @Override
@@ -45,17 +47,24 @@ public class LayarListPembeli extends AppCompatActivity {
                 mPembeliCall . enqueue ( new Callback < GetPembeli >() {
                     @Override
                     public void onResponse ( Call < GetPembeli > call , Response < GetPembeli > response ) {
-                        Log . d ( "GetPembeli" , response . body (). getStatus ());
+                        //Log . d ( "Get Pembeli" , response . body (). getStatus ());
                         List < Pembeli > listPembeli = response . body (). getResult ();
                         mAdapter = new PembeliAdapter ( listPembeli );
                         mRecyclerView . setAdapter ( mAdapter );
                     }
                     @Override
                     public void onFailure ( Call < GetPembeli > call , Throwable t ) {
-                        Log . d ( "GetPembeli" , t . getMessage ());
+                        Log . d ( "Get Pembeli" , t . getMessage ());
                     }
                 });
             }
         });
+        btAddData . setOnClickListener ( new View . OnClickListener () {
+            @Override
+            public void onClick ( View view ) {
+                Intent intent = new Intent ( mContext , LayarInsertPembeli . class );
+                startActivity ( intent );
+            }
+        });
     }
-    }
+}

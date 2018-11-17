@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LayarInsertPembeli">
+    <RelativeLayout
+        android:layout_width= "match_parent"
+        android:layout_height= "match_parent"
+        android:layout_margin= "10dp" >
+
+        <ImageView
+            android:id="@+id/imgAddPhotoId"
+            android:layout_width="200dp"
+            android:layout_height="132dp"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/default_user" />
+
+        <Button
+            android:id="@+id/btAddPhotoId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@+id/imgAddPhotoId"
+            android:layout_marginEnd="22dp"
+            android:text="Pilih Foto" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:text="ID pembeli :" />
+
+        <EditText
+            android:id="@+id/edtAddIdPembeli"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/edtAddNamaPembeli"
+            android:layout_centerVertical="true"
+            android:hint="id"
+            android:layout_alignLeft="@+id/edtAddNamaPembeli" />
+        <TextView
+            android:id= "@+id/tvAddNama"
+            android:layout_width= "wrap_content"
+            android:layout_height= "wrap_content"
+            android:layout_below= "@+id/btAddPhotoId"
+            android:layout_marginRight= "50dp"
+            android:text= "Nama :"
+            android:textSize= "20dp" />
+        <EditText
+            android:id= "@+id/edtAddNamaPembeli"
+            android:layout_width= "wrap_content"
+            android:layout_height= "wrap_content"
+            android:layout_alignBaseline= "@+id/tvAddNama"
+            android:layout_alignParentEnd= "true"
+            android:layout_toRightOf= "@+id/tvAddNama"
+            android:hint= "Nama"
+            android:layout_alignParentRight="true" />
+        <TextView
+            android:id= "@+id/tvAddAlamat"
+            android:layout_width= "wrap_content"
+            android:layout_height= "wrap_content"
+            android:layout_below= "@+id/tvAddNama"
+            android:text= "Alamat :"
+            android:textSize= "20dp" />
+        <EditText
+            android:id= "@+id/edtAddAlamatPembeli"
+            android:layout_width= "wrap_content"
+            android:layout_height= "wrap_content"
+            android:layout_alignBaseline= "@+id/tvAddAlamat"
+            android:layout_alignLeft= "@+id/edtAddNamaPembeli"
+            android:layout_alignParentEnd= "true"
+            android:layout_toRightOf= "@+id/tvAddAlamat"
+            android:hint= "Alamat"
+            android:layout_alignParentRight="true" />
+        <TextView
+            android:id= "@+id/tvAddTelp"
+            android:layout_width= "wrap_content"
+            android:layout_height= "wrap_content"
+            android:layout_below= "@+id/tvAddAlamat"
+            android:text= "Telepon :"
+            android:textSize= "20dp" />
+        <EditText
+            android:id= "@+id/edtAddTelpPembeli"
+            android:layout_width= "wrap_content"
+            android:layout_height= "wrap_content"
+            android:layout_alignBaseline= "@+id/tvAddTelp"
+            android:layout_alignLeft= "@+id/edtAddNamaPembeli"
+            android:layout_alignParentEnd= "true"
+            android:layout_toRightOf= "@+id/tvAddTelp"
+            android:hint= "Telp"
+            android:inputType= "phone"
+            android:layout_alignParentRight="true" />
+        <LinearLayout
+            android:id= "@+id/LinearLayout"
+            android:layout_width= "wrap_content"
+            android:layout_height= "wrap_content"
+            android:layout_below= "@+id/tvAddTelp"
+            android:layout_centerHorizontal= "true"
+            android:layout_marginBottom= "5dp"
+            android:layout_marginTop= "5dp"
+            android:orientation= "horizontal" >
+            <Button
+                android:id= "@+id/btAddData"
+                android:layout_width= "wrap_content"
+                android:layout_height= "wrap_content"
+                android:text= "Insert" />
+            <Button
+                android:id= "@+id/btAddBack"
+                android:layout_width= "wrap_content"
+            android:layout_height= "wrap_content"
+            android:text= "Back" />
+        </LinearLayout>
+        <TextView
+            android:id= "@+id/tvAddMessage"
+            android:layout_width= "match_parent"
+            android:layout_height= "wrap_content"
+            android:layout_alignParentBottom= "true"
+            android:layout_below= "@+id/LinearLayout"
+            android:hint= "Pesan"
+            android:inputType= "textMultiLine"
+            android:textSize= "20dp" />
+    </RelativeLayout>
+</ScrollView>

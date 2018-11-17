@@ -4,4 +4,6 @@
         android:title= "Tambah Trans Pembelian" />
     <item android:id= "@+id/menuListPembeli"
         android:title= "List Pembeli" />
+    <item android:id= "@+id/menuInsertDataPembeli"
+        android:title= "Insert Data Pembeli" />
 </menu>

@@ -47,6 +47,10 @@ public class MainActivity extends AppCompatActivity {
                 mIntent = new Intent ( this , LayarListPembeli . class );
                 startActivity ( mIntent );
                 return true ;
+            case R . id . menuInsertDataPembeli :
+                Intent intent = new Intent ( this , LayarInsertPembeli . class );
+                startActivity ( intent );
+                return true ;
             default :
                 return super . onOptionsItemSelected ( item );
         }
